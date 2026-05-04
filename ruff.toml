@@ -11,14 +11,24 @@ allow-dict-calls-with-keyword-arguments = true
 
 [lint.flake8-quotes]
 inline-quotes = "single"
-multiline-quotes = "single"
+
+[lint.pydocstyle]
+convention = "google"
 
 [lint.pep8-naming]
 ignore-names = ["*Exception"]  # Allow non-error exceptions
 
 [lint.per-file-ignores]
-"__init__.py" = ["F401"]  # Disable unused-import when bulk exporting
-"test_*.py" = ["S101"]    # Allow assertions in test files
+"__init__.py" = [
+  "F401" # Disable unused-import when bulk exporting
+]
+"conftest.py" = [
+  "D",   # Disable pydocstyle for fixtures
+]
+"test_*.py" = [
+  "D",   # Disable pydocstyle for tests
+  "S101" # assert (allow assertions in test files)
+]
 
 [lint]
 select = [
@@ -47,14 +57,15 @@ select = [
   "S",     # flake8-bandit
   "SIM",   # flake8-simplify
   "TC",    # flake8-type-checking
+  "TID",   # flake8-tidy-imports
   "TRY",   # tryceratops
   "UP",    # pyupgrade
   "W",     # pycodestyle warning
 ]
 ignore = [
-  "D203",    # choice between D203 (incorrect-blank-line-before-class) and D211 (no-blank-line-before-class)
-  "D213",    # choice between D212 (multi-line-summary-first-line) and D213 (multi-line-summary-second-line)
+  "D107",    # undocumented-public-init (we add documentation in the class itself)
   "PLC1901", # compare-to-empty-string (we prefer explicit comparisons)
   "PLR091",  # too-many-* (we find cyclomatic complexity neater)
   "PTH123",  # builtin-open (the builtin open is perfectly fine)
+  "TRY003",  # raise-vanilla-args (forbidding errors with messages is a bit too much)
 ]
