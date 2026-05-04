@@ -63,9 +63,11 @@ select = [
 ignore = [
   "D107",    # undocumented-public-init (we add documentation in the class itself)
   "E501",    # line-too-long (long lines are long for a reason)
+  "E74",     # ambiguous-{variable,class,function}-name (I have trouble believing that these are real rules)
   "PLC1901", # compare-to-empty-string (we prefer explicit comparisons)
   "PLR091",  # too-many-* (we find cyclomatic complexity neater)
-  "PLR2004", # magic-value-comparison (magick values sometimes express the intent more clearly than an awkwardly named constant)
+  "PLR1714", # repeated-equality-comparison (does it really matter if we write `a == 1 or a == 2` or `a in {1, 2}`?)
+  "PLR2004", # magic-value-comparison (magic values sometimes express the intent more clearly than an awkwardly named constant)
   "PTH123",  # builtin-open (the builtin open is perfectly fine)
   "RUF001", "RUF002", "RUF003", # ambiguous-unicode-character-{string,docstring,comment} (why do such rules even exist?)
   "TRY003",  # raise-vanilla-args (forbidding errors with messages is a bit too much)
