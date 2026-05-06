@@ -3,6 +3,6 @@ revision = 3
 requires-python = ">=3.10"
 
 [[package]]
-name = "ruff-config"
-version = "0.15.post6"
+name = "ruff-config-ivasilev"
+version = "0.15.post7"
 source = { editable = "." }
