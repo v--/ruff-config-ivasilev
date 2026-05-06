@@ -1,0 +1,8 @@
+version = 1
+revision = 3
+requires-python = ">=3.10"
+
+[[package]]
+name = "ruff-config"
+version = "0.15.post6"
+source = { editable = "." }

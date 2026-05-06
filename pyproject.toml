@@ -1,0 +1,21 @@
+[project]
+name = "ruff-config"
+version = "0.15-6"
+description = "Shared ruff configuration."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+authors = [
+  { name = "Ianis Vasilev", email = "ianis@ivasilev.net" }
+]
+
+[project.urls]
+Repository = "https://github.com/v--/ruff-config.git"
+
+[build-system]
+# uv build complains if no upper bound is set, but it updates its minor versions often, so we put a major version just to shut it up
+requires = ["hatchling (>=1.15)"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+shared-data = { "ruff.ivasilev.toml" = "share/ruff/ruff.ivasilev.toml" }
