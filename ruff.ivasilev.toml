@@ -20,13 +20,16 @@ ignore-names = ["*Exception"]  # Allow non-error exceptions
 
 [lint.per-file-ignores]
 "__init__.py" = [
-  "F401" # Disable unused-import when bulk exporting
+  # Do not report unused imports when bulk exporting
+  "unused-import"
 ]
 "conftest.py" = [
-  "D",   # Disable pydocstyle for fixtures
+  # Disable pydocstyle for fixtures
+  "D",
 ]
 "test_*.py" = [
-  "D",   # Disable pydocstyle for tests
+  # Disable pydocstyle for fixtures
+  "D",
 ]
 
 [lint]
@@ -60,13 +63,34 @@ select = [
   "W",     # pycodestyle warning
 ]
 ignore = [
-  "D107",    # undocumented-public-init (we add documentation in the class itself)
-  "E501",    # line-too-long (long lines are long for a reason)
-  "E74",     # ambiguous-{variable,class,function}-name (I have trouble believing that these are real rules)
-  "PLC1901", # compare-to-empty-string (we prefer explicit comparisons)
-  "PLR091",  # too-many-* (we find cyclomatic complexity neater)
-  "PLR1714", # repeated-equality-comparison (does it really matter if we write `a == 1 or a == 2` or `a in {1, 2}`?)
-  "PLR2004", # magic-value-comparison (magic values sometimes express the intent more clearly than an awkwardly named constant)
-  "RUF001", "RUF002", "RUF003", # ambiguous-unicode-character-{string,docstring,comment} (why do such rules even exist?)
-  "TRY003",  # raise-vanilla-args (forbidding errors with messages is a bit too much)
+  # too-many-* (we find cyclomatic complexity neater)
+  "PLR091",
+
+  # We add documentation in the class itself
+  "undocumented-public-init",
+
+  # Long lines are long for a reason
+  "line-too-long",
+
+  # I have trouble believing that these are real rules
+  "ambiguous-variable-name",
+  "ambiguous-class-name",
+  "ambiguous-function-name",
+
+  # We prefer explicit comparisons
+  "compare-to-empty-string",
+
+  # Does it really matter if we write `a == 1 or a == 2` or `a in {1, 2}`?
+  "repeated-equality-comparison",
+
+  # Magic values sometimes express the intent more clearly than an awkwardly named constant
+  "magic-value-comparison",
+
+  # Why do such rules even exist?
+  "ambiguous-unicode-character-string",
+  "ambiguous-unicode-character-docstring",
+  "ambiguous-unicode-character-comment",
+
+  # Forbidding errors with messages is a bit too much
+  "raise-vanilla-args",
 ]
