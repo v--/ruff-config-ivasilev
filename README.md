@@ -4,7 +4,7 @@
 
 This repository is intended to be installed as a Python package via the following dependency specifier:
 
-    "ruff-config-ivasilev @ git+https://github.com/v--/ruff-config-ivasilev.git@v{ruff-version}post{config-revision}"
+    "ruff-config-ivasilev @ git+https://github.com/v--/ruff-config-ivasilev.git@v{ruff-version}.post{config-revision}"
 
 After installing, the file `ruff.ivasilev.toml` should be placed into a `shared/ruff` directory by the package manager.
 
