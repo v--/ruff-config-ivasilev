@@ -24,12 +24,15 @@ ignore-names = ["*Exception"]  # Allow non-error exceptions
   "unused-import"
 ]
 "conftest.py" = [
-  # Disable pydocstyle for fixtures
-  "D",
+  # Disable pydocstyle undocumented-* rules for fixtures
+  "D1",
 ]
 "test_*.py" = [
-  # Disable pydocstyle for fixtures
-  "D",
+  # Disable pydocstyle undocumented-* rules for tests
+  "D1",
+
+  # Allow test_* methods that do not use self
+  "no-self-use"
 ]
 
 [lint]
