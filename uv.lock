@@ -4,5 +4,5 @@ requires-python = ">=3.10"
 
 [[package]]
 name = "ruff-config-ivasilev"
-version = "0.15.post8"
+version = "0.15.post9"
 source = { editable = "." }
