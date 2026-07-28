@@ -36,7 +36,7 @@ ignore-names = ["*Exception"]  # Allow non-error exceptions
 ]
 
 [lint]
-select = [
+extend-select = [
   "A",     # flake8-builtins
   "ANN",   # flake8-annotations
   "ARG",   # flake8-unused-arguments
