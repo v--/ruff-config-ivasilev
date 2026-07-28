@@ -4,6 +4,8 @@ version = "0.15.post9"
 description = "Shared ruff configuration."
 readme = "README.md"
 requires-python = ">=3.10"
+license = "CC0-1.0"
+license-files = ["LICENSES/CC0-1.0.txt"]
 dependencies = []
 
 authors = [
